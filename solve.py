@@ -14,11 +14,10 @@ D = 20
 avgDsize = n * n // D
 
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
-state = ((frozenset(range(n*n)),) + tuple(frozenset() for i in range(D - 1)), (0,) * (n * n))
+state = (0,) * (n * n)
 
 def change(state, cell, newDistrict):
-    return (tuple(district.union({cell}) if i == newDistrict else district.difference({cell}) for i, district in enumerate(state[0])),
-            tuple(currentDistrict if i != cell else newDistrict for i, currentDistrict in enumerate(state[1])))
+    return tuple(currentDistrict if i != cell else newDistrict for i, currentDistrict in enumerate(state))
 
 def adjacent(cell):
     if cell % n > 0:
@@ -32,12 +31,12 @@ def adjacent(cell):
 
 def neighbours(state):
     yield state #?
-    firstEmpty = next((i for i, district in enumerate(state[0]) if len(district) == 0), None)
+    firstEmpty = next(iter(set(range(D)).difference(set(state))), None)
     for i in range(n * n):
         candidates = set()
-        ownDistrict = state[1][i]
+        ownDistrict = state[i]
         for neighbour in adjacent(i):
-            candidates.add(state[1][neighbour])
+            candidates.add(state[neighbour])
         candidates.discard(ownDistrict)
         if firstEmpty is not None:
             candidates.add(firstEmpty)
