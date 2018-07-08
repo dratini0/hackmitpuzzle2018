@@ -36,9 +36,9 @@ def adjacent(cell):
         yield cell - 1
     if cell % n < n - 1:
         yield cell + 1
-    if cell // n > 0:
+    if cell >= n:
         yield cell - n
-    if cell // n < n - 1:
+    if cell < n * n - n:
         yield cell + n
 
 def neighbours(state):
@@ -46,6 +46,23 @@ def neighbours(state):
     for i in range(n * n):
         candidates = set()
         ownDistrict = state[i]
+        NIS = [
+            i >= n and state[i - n] == ownDistrict,
+            i >= n and i % n > 0 and state[i - n - 1] == ownDistrict,
+            i % n > 0 and state[i - 1] == ownDistrict,
+            i < n * n - n and i % n > 0 and state[i + n - 1] == ownDistrict,
+            i < n * n - n and state[i + n] == ownDistrict,
+            i < n * n - n and i % n < n - 1 and state[i + n + 1] == ownDistrict,
+            i % n < n - 1 and state[i + 1] == ownDistrict,
+            i >= n and i % n < n - 1 and state[i - n + 1] == ownDistrict,
+        ]
+        if (NIS[0] and NIS[2] and not NIS[1]) or \
+           (NIS[2] and NIS[4] and not NIS[3]) or \
+           (NIS[4] and NIS[6] and not NIS[5]) or \
+           (NIS[6] and NIS[0] and not NIS[7]) or \
+           (NIS[0] and NIS[4] and not NIS[2] and not NIS[6]) or \
+           (NIS[2] and NIS[6] and not NIS[0] and not NIS[4]):
+            continue
         for neighbour in adjacent(i):
             candidates.add(state[neighbour])
         candidates.discard(ownDistrict)
@@ -96,7 +113,7 @@ def energy(s):
     return sum(max(0, (current - goal) / (start - goal)) * weight for current, start, goal, weight in zip(metrics, startMetrics, goalMetrics, weights))
 
 def temperature(proportion):
-    return 1.1/(proportion * 9 + 1) - .11
+    return 1/(proportion * 5 + 1) - 1/6
 
 def P(oldEnergy, newEnergy, temp):
     if newEnergy < oldEnergy: return 1
