@@ -19,8 +19,9 @@ D = 20
 SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
 startMetrics = (40, 0, 8073214151187.423, -0.14 * population)
+weights = (1/40, -1/10, 1/1.68e12, -1/0.074/population)
 SEED = urandom(16)
-ITERS = int(1e6)
+ITERS = int(1e5)
 
 #avgDsize = n * n // D
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
@@ -108,7 +109,7 @@ def evaluate(state):
 
 def energy(s):
     metrics = evaluate(s)
-    return sum(max(0, (current - goal) / (start - goal)) for current, start, goal in zip(metrics, startMetrics, goalMetrics))
+    return sum(max(0, (current - goal) * weight) for current, goal, weight in zip(metrics, goalMetrics, weights))
 
 def temperature(proportion):
     return 1/(proportion * 5 + 0.01) - 1/5.01
