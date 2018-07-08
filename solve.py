@@ -107,11 +107,11 @@ rng.seed(SEED)
 print(SEED)
 currentEnergy = energy(state)
 for i in range(ITERS):
+    temp = temperature(i/ITERS)
     if i % 1000 == 0:
-        print(i, currentEnergy)
+        print(i, currentEnergy, temp)
     if currentEnergy <= 0:
         break
-    temp = temperature(i/ITERS)
     nextState = rng.choice(list(neighbours(state)))
     nextStateEnergy = energy(nextState)
     if rng.random() < P(currentEnergy, nextStateEnergy, temp):
