@@ -20,7 +20,7 @@ goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
 weights = (1, 1, 1, 1)
 
 SEED = "VPIPwCFEBpwxrLW9TZ4dDXTFVF1VN6U+JOS+3xjN"
-ITERS = int(1e6)
+ITERS = int(5e6)
 
 #avgDsize = n * n // D
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
