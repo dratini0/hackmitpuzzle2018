@@ -18,9 +18,9 @@ n = 10
 D = 20
 SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
-startMetrics = (40, 0, 80732141511874.23, -0.14 * population)
+startMetrics = (40, 0, 8073214151187.423, -0.14 * population)
 SEED = urandom(16)
-ITERS = int(5e6)
+ITERS = int(1e6)
 
 #avgDsize = n * n // D
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
