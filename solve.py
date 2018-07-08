@@ -20,7 +20,7 @@ goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
 weights = (1, 1, 1, 1)
 
 SEED = "VPIPwCFEBpwxrLW9TZ4dDXTFVF1VN6U+JOS+3xjN"
-ITERS = int(1e7)
+ITERS = int(1e6)
 
 #avgDsize = n * n // D
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
@@ -96,7 +96,7 @@ def energy(s):
     return sum(max(0, (current - goal) / (start - goal)) * weight for current, start, goal, weight in zip(metrics, startMetrics, goalMetrics, weights))
 
 def temperature(proportion):
-    return 1 - proportion
+    return 1.1/(proportion * 9 + 1) - .11
 
 def P(oldEnergy, newEnergy, temp):
     if newEnergy < oldEnergy: return 1
