@@ -18,7 +18,7 @@ n = 10
 D = 20
 SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
-weights = (1, 1, 1, 1)
+weights = (.5, 1, 1, 1)
 
 SEED = urandom(16)
 ITERS = int(5e6)
@@ -114,7 +114,7 @@ def energy(s):
     return sum(max(0, (current - goal) / (start - goal)) * weight for current, start, goal, weight in zip(metrics, startMetrics, goalMetrics, weights))
 
 def temperature(proportion):
-    return 1/(proportion * 5 + 1) - 1/6
+    return 1/(proportion * 5 + 0.01) - 1/5.01
 
 def P(oldEnergy, newEnergy, temp):
     if newEnergy < oldEnergy: return 1
