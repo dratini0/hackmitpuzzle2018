@@ -18,14 +18,12 @@ n = 10
 D = 20
 SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
-weights = (.5, 1, 1, 1)
-
+startMetrics = (40, 0, 80732141511874.23, -0.14 * population)
 SEED = urandom(16)
-ITERS = int(5e6)
+ITERS = int(1e6)
 
 #avgDsize = n * n // D
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
-state = [0,] * (n * n)
 
 def change(state, cell, newDistrict):
     ret = state.copy()
@@ -97,7 +95,8 @@ def evaluate(state):
         pWin = (1 + erf((aVoters * SVP + bVoters * (1 - SVP) - (aVoters + bVoters) / 2) / sqrt(2 * (aVoters + bVoters) * SVP * (1 - SVP)))) / 2
         aDistricts += pWin
 
-        DPI += (aPop + bPop - population/D) * (aPop + bPop - population/D)
+        preDPI = aVoters + bVoters - population/D
+        DPI += preDPI * preDPI
 
         # EEG = pWin (E[aVotes | Win] - pop/2 - E[bVotes | Win]) + (1 - pWin) (E[aVotes | ~Win] - E[bVotes | ~Win] + pop/2) =
         # = E[aVotes] - E[bVotes] - pWin * pop/2 + (1 - pWin) * pop/2 =
@@ -107,11 +106,9 @@ def evaluate(state):
 
     return hasEmpty, aDistricts, DPI, EEG
 
-startMetrics = evaluate(state)
-
 def energy(s):
     metrics = evaluate(s)
-    return sum(max(0, (current - goal) / (start - goal)) * weight for current, start, goal, weight in zip(metrics, startMetrics, goalMetrics, weights))
+    return sum(max(0, (current - goal) / (start - goal)) for current, start, goal in zip(metrics, startMetrics, goalMetrics))
 
 def temperature(proportion):
     return 1/(proportion * 5 + 0.01) - 1/5.01
@@ -120,24 +117,30 @@ def P(oldEnergy, newEnergy, temp):
     if newEnergy < oldEnergy: return 1
     else: return exp((oldEnergy - newEnergy) / temp)
 
-rng = Random()
-rng.seed(SEED)
-print(repr(SEED))
-currentEnergy = energy(state)
-for i in range(ITERS):
-    temp = temperature(i/ITERS)
-    if i % 1000 == 0:
-        print(i, currentEnergy, temp)
-    if currentEnergy <= 0:
-        break
-    nextState = rng.choice(list(neighbours(state)))
-    nextStateEnergy = energy(nextState)
-    if rng.random() < P(currentEnergy, nextStateEnergy, temp):
-        state = nextState
-        currentEnergy = nextStateEnergy
+def main():
+    state = [0,] * (n * n)
+    rng = Random()
+    rng.seed(SEED)
+    print(repr(SEED))
+    currentEnergy = energy(state)
+    for i in range(ITERS):
+        temp = temperature(i/ITERS)
+        if i % 1000 == 0:
+            print(i, currentEnergy, temp)
+        if currentEnergy <= 0:
+            break
+        nextState = rng.choice(list(neighbours(state)))
+        nextStateEnergy = energy(nextState)
+        if rng.random() < P(currentEnergy, nextStateEnergy, temp):
+            state = nextState
+            currentEnergy = nextStateEnergy
 
-solution = [[] for i in range(D)]
-for block, district in enumerate(state):
-    solution[district].append(block)
-print(json.dumps(solution))
-print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
+    print(evaluate(state))
+    solution = [[] for i in range(D)]
+    for block, district in enumerate(state):
+        solution[district].append(block)
+    print(json.dumps(solution))
+    print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
+
+if __name__ == "__main__":
+    main()
