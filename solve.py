@@ -14,10 +14,12 @@ D = 20
 avgDsize = n * n // D
 
 #solution = (tuple(frozenset(range(i, i+avgDsize)) for i in range(0, n * n, avgDsize)), tuple(d // avgDsize for d in range(n * n)))
-state = (0,) * (n * n)
+state = [0,] * (n * n)
 
 def change(state, cell, newDistrict):
-    return tuple(currentDistrict if i != cell else newDistrict for i, currentDistrict in enumerate(state))
+    ret = state.copy()
+    ret[cell] = newDistrict
+    return ret
 
 def adjacent(cell):
     if cell % n > 0:
@@ -43,9 +45,12 @@ def neighbours(state):
         for candidate in candidates:
             yield change(state, i, candidate)
 
+def evaluate(state):
+
+
 for i in neighbours(state):
     print(i)
 
 solution = []
-print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
-print(json.dumps(solution))
+#print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
+#print(json.dumps(solution))
