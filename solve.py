@@ -121,6 +121,5 @@ for i in range(ITERS):
 solution = [[] for i in range(D)]
 for block, district in enumerate(state):
     solution[district].append(block)
-print(solution)
-#print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
-#print(json.dumps(solution))
+print(json.dumps(solution))
+print(post(ENDPOINT, data={"json": json.dumps(solution)}).text)
