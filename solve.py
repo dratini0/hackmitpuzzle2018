@@ -6,6 +6,7 @@ import json
 from itertools import *
 from math import *
 from random import Random
+from os import urandom
 
 ENDPOINT = "https://gerry.hackmirror.icu/u/dratini0_cfb7da/"
 FILE = "voters.json"
@@ -19,7 +20,7 @@ SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
 weights = (1, 1, 1, 1)
 
-SEED = "VPIPwCFEBpwxrLW9TZ4dDXTFVF1VN6U+JOS+3xjN"
+SEED = os.urandom(16)
 ITERS = int(5e6)
 
 #avgDsize = n * n // D
@@ -121,7 +122,7 @@ def P(oldEnergy, newEnergy, temp):
 
 rng = Random()
 rng.seed(SEED)
-print(SEED)
+print(repr(SEED))
 currentEnergy = energy(state)
 for i in range(ITERS):
     temp = temperature(i/ITERS)
