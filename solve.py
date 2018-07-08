@@ -104,7 +104,7 @@ def P(oldEnergy, newEnergy, temp):
 
 rng = Random()
 rng.seed(SEED)
-print(seed)
+print(SEED)
 currentEnergy = energy(state)
 for i in range(ITERS):
     if i % 1000 == 0:
