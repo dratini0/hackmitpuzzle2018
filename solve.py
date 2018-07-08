@@ -20,7 +20,7 @@ SVP = .6 # straightVoteProbability
 goalMetrics = (0, 10.0, 1.68e12, -0.074 * population)
 weights = (1, 1, 1, 1)
 
-SEED = os.urandom(16)
+SEED = urandom(16)
 ITERS = int(5e6)
 
 #avgDsize = n * n // D
