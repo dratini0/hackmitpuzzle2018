@@ -1,0 +1,198 @@
+b'\xb5\xd7\xacE\xef\x80\xea8\x08w\x9a\xf5!\x03z%'
+0 48.529846138020375 99.8003992015968
+1000 16.100157142470447 1.7611835153222966
+2000 5.960917222867575 0.7904982114977965
+3000 2.2678065380320866 0.4626508572259455
+4000 1.2695187154542793 0.2979116394077517
+5000 0.9583480253899977 0.19880557609879845
+6000 0.8056105588307766 0.13262511521806886
+7000 0.668265199851291 0.08529948649709129
+8000 0.20044767460674295 0.04977576020029767
+9000 0.16060725361642803 0.022128691618979346
+(0, 9.98105355533594, 1674956755224.55, 1134968.4511185288)
+[[59, 67, 68, 69, 79], [5, 6, 16, 17], [13, 14, 15, 23, 25, 33, 34, 35], [7, 8, 9, 18, 19, 26, 27, 28, 36, 44, 45, 46, 47], [12, 22, 32, 42], [82], [80, 90, 91, 92, 93, 94], [61, 63, 64, 65, 71, 72, 73, 81], [2, 3, 4], [74, 83, 84, 85, 86, 87, 95, 96], [29, 37, 38, 39, 48, 49], [56, 57, 58, 66], [43, 52, 53, 54, 55, 62], [1, 11, 21], [77, 78, 88, 89, 98, 99], [24], [0, 10, 20, 30, 31, 40, 41, 50, 60, 70], [97], [51], [75, 76]]
+<html>
+  <head>
+    <title>Gerry</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <style type="text/css">
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+        margin-bottom: 30px;
+      }
+      .header {
+        text-align: center;
+        font-weight: bold;
+      }
+      .header .logo {
+        font-size: 100pt;
+        transform: rotate(-45deg);
+      }
+      .header .name {
+        font-size: 24pt;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      table.requirements {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.requirements th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table.requirements tr:last-child td {
+        border-bottom: none;
+      }
+      
+      a {
+        color: white;
+      }
+
+      .submission-error {
+        color: red;
+      }
+
+      .submission-success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">E</div>
+      <div class="name">E CORP</div>
+    </div>
+
+    <div class="content">
+      <h2>TICKET #CONSULT-49343</h2>
+
+      
+<h3>Summary</h3>
+<p>A certain political party has reached out to us asking for help drawing the districts before an upcoming election. They need to win more seats in an oddly grid like state. Help them win while remaining within fairness criteria imposed by the local redistricting committee.</p>
+
+<h3>Technical Details</h3>
+<h4>Districts and Blocks</h4>
+<p>
+  The state is an $n$ by $n$ grid, composed of $n^2$ different blocks.
+  Sets of blocks can be combined into $D$ different districts.
+  Blocks are labeled by integers $0 \leq i \lt n^2$.
+  A block's coordinate is $(\lfloor i/n \rfloor, i\ \mathrm{mod}\ n)$, its neighbors are the blocks it shares a full side with.
+  You will be provided $a_i$ and $b_i$ for each district $i$, these are the number of voters of party A and B, respectively. The population of a block is $a_i + b_i$.
+  For this problem, $n = 10, D = 20$.
+</p>
+
+<h4>How To Win</h4>
+<p>
+  The client only cares about one thing: maximizing the number of districts party A expects to win.
+  Each voter in party X will vote for party X with a $60\%$ chance, and the other party with a $40\%$ chance.
+  The client is ok with the following approximations:
+  <ul>
+    <li>$\mathrm{Bin}(n, p) = \mathrm{N}(np, np(1-p))$</li>
+    <li>$\mathbb{E}[\text{number of districts party A wins}] = \sum_j \mathbb{P}(\text{party A wins district } j)$</li>
+  </ul>
+</p>
+
+<h4>Districting Requirements</h4>
+<p>
+  The redistricting committee has a few requirements for any redistricting plan:
+  <ul>
+    <li>Each block must be assigned to a single district.</li>
+    <li>Each district must have at least 1 block.</li>
+    <li>Each district is contiguous -- each block in a district is reachable by other blocks in that district.</li>
+  </ul>
+
+  The redistricting committee also cares about fairness so they inspect the following additional metrics:
+  <ul>
+    <li>District Population Imbalance - The sum of square differences between each district's population and the mean district population.</li>
+    <li>
+      Expected Efficiency Gap - The efficiency gap is a metric that is meant to quantitatively indicate gerrymandering.
+      First, compute the number of wasted votes for both parties. A wasted vote is any vote in a district where the party lost the election, or any vote beyond what was needed to win in a district where the party won.
+      Then take the subtract the number of wasted votes for party B from the number of wasted votes for party A and divide that number by total population.
+      A largely negative value is associated with gerrymandering in favor of party A.
+      Since this metric can only be computed given an election, the committee only cares about its value in expectation.
+    </li>
+  </ul>
+</p>
+
+<h4>The Other Consultant</h4>
+<p>
+  Our client has already reached out to another consultant, who has provided a solution with the following properties. You must submit a labeling that is at least as good in each metric.
+</p>
+
+<!-- 73 -->
+
+<table class="requirements">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Competitor Value</th>
+      <th>Direction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected Party A Districts</td>
+      <td>$ 10 $</td>
+      <td>higher is better</td>
+    </tr>
+    <tr>
+      <td>District Population Imbalance</td>
+      <td>$ 164 \times 10^{10}$</td>
+      <td>lower is better</td>
+    </tr>
+    <tr>
+      <td>Expected Efficiency Gap</td>
+      <td>$ -0.074 $</td>
+      <td>higher is better</td>
+    </tr>
+  </tbody>
+</table>
+
+<a id="submission"></a>
+<h4>Submission</h4>
+
+<p>You can obtain your voter data at <a href="/u/dratini0_cfb7da/voters.json">voters.json</a></p>
+<p>To submit an answer to this puzzle, submit JSON in this format:</p>
+<pre><code>
+[
+  [0, 1, 2],
+  [3, 4, 5]
+]
+</code></pre>
+This example signifies two districts, one containing blocks 0, 1, and 2. The other containing 3, 4, and 5.
+
+<form method="POST">
+  <textarea name="json" cols="80"></textarea>
+  <br />
+  <input type="submit" value="Evaluate" />
+</form>
+
+
+
+
+<div class="submission-error">
+  <h4>Submission Error</h4>
+<p>Violated bounds for Expected Party A Districts, District Population Imbalance</p>
+</div>
+
+
+
+
+    </div>
+  </body>
+</html>

